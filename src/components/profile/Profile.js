@@ -1,32 +1,41 @@
+import {
+  Card,
+  ContactInfo,
+  UserName,
+  Contact,
+  StatsBlock,
+  Stats,
+} from './profile.styled';
+
 export const Ptofile = ({ user }) => {
   const { username, tag, location, stats } = user;
   return (
-    <div>
-      <div>
+    <Card>
+      <ContactInfo>
         <img
           src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
           alt="User avatar"
           width={50}
         />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
-      </div>
+        <UserName>{username}</UserName>
+        <Contact>@{tag}</Contact>
+        <Contact>{location}</Contact>
+      </ContactInfo>
 
-      <ul>
-        <li>
+      <StatsBlock>
+        <Stats>
           <span>Followers</span>
           <span>{stats.followers}</span>
-        </li>
-        <li>
+        </Stats>
+        <Stats>
           <span>Views</span>
           <span>{stats.views}</span>
-        </li>
-        <li>
+        </Stats>
+        <Stats>
           <span>Likes</span>
           <span>{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+        </Stats>
+      </StatsBlock>
+    </Card>
   );
 };
