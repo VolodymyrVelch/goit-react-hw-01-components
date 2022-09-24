@@ -12,11 +12,9 @@ export const App = () => {
     <div
       style={{
         padding: '30px',
-        height: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-
         color: '#010101',
       }}
     >

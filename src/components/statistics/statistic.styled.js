@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
+export const StatisticCard = styled.div`
   margin: 20px;
   padding: 40px;
   border-radius: 4px;
@@ -8,38 +8,34 @@ export const Card = styled.div`
   width: 400px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
-export const ContactInfo = styled.div`
+export const StatTitle = styled.h2`
+  margin-bottom: 20px;
   text-align: center;
-  margin-bottom: 30px;
-`;
-export const UserName = styled.p`
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 10px;
-`;
-
-export const Contact = styled.p`
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: grey;
 `;
 
 export const StatsBlock = styled.ul`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 0;
-  flex-grow: inherit;
-  gap: 30px;
+  gap: 5px;
   list-style-type: none;
 `;
 
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
 export const Stats = styled.li`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   padding: 10px;
   text-align: center;
-  width: calc(100% / 3);
+  width: calc(100% / 5);
 
+  background-color: ${getRandomHexColor};
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;

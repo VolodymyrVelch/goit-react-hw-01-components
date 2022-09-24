@@ -7,7 +7,7 @@ export const Cards = styled.ul`
 export const Card = styled.li`
   display: flex;
   margin: 10px;
-  padding: 10px;
+  padding: 20px;
   align-items: center;
   gap: 15px;
   border-radius: 4px;
