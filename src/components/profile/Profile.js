@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   Card,
   ContactInfo,
@@ -7,8 +8,8 @@ import {
   Stats,
 } from './profile.styled';
 
-export const Ptofile = ({ user }) => {
-  const { username, tag, location, stats } = user;
+export const Ptofile = props => {
+  const { username, tag, location, stats } = props;
   return (
     <Card>
       <ContactInfo>
@@ -38,4 +39,14 @@ export const Ptofile = ({ user }) => {
       </StatsBlock>
     </Card>
   );
+};
+
+Ptofile.propTypes = {
+  user: PropTypes.shape({
+    location: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    stats: PropTypes.object.isRequired,
+  }),
 };

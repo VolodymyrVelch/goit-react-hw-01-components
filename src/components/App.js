@@ -1,16 +1,17 @@
 import { Ptofile } from './profile/Profile';
 import { FriendList } from './friendList/friendList';
 import { Statistic } from './statistics/statistic';
-import { Transaction } from './transactions/transaction';
-import user from './profile/user.json';
-// import friends from './friendList/friends.json';
-// import data from './statistics/data.json';
-// import transaction from './transactions/transactions.json';
+import { TransactionHistory } from './transactions/TransactionHistory';
+import user from './profile/user';
+import data from './statistics/data';
+import friends from './friendList/friends.json';
+import transactions from './transactions/transactions';
 
 export const App = () => {
   return (
     <div
       style={{
+        padding: '30px',
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
@@ -19,10 +20,18 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <Ptofile user={user} />
-      <FriendList />
-      <Statistic />
-      <Transaction />
+      <div>
+        <Ptofile
+          username={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
+        />
+        <Statistic stats={data} />
+      </div>
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />;
     </div>
   );
 };
