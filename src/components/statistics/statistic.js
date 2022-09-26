@@ -6,10 +6,10 @@ import {
   StatTitle,
 } from './statistic.styled';
 
-export const Statistic = ({ stats }) => {
+export const Statistic = ({ title, stats }) => {
   return (
     <StatisticCard>
-      <StatTitle>Upload stats</StatTitle>
+      {title && <StatTitle>{title}</StatTitle>}
       <StatsBlock>
         {stats.map(stats => (
           <Stats key={stats.id}>

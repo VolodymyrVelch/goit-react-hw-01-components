@@ -8,7 +8,7 @@ import {
   Stats,
 } from './profile.styled';
 
-export const Ptofile = props => {
+export const Profile = props => {
   const { username, tag, location, stats } = props;
   return (
     <Card>
@@ -41,7 +41,7 @@ export const Ptofile = props => {
   );
 };
 
-Ptofile.propTypes = {
+Profile.propTypes = {
   user: PropTypes.shape({
     location: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
